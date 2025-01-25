@@ -1,5 +1,6 @@
 package com.mires.bdbt.zajezdnia.configs;
 
+import com.mires.bdbt.zajezdnia.services.WlascicielService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -13,15 +14,15 @@ import java.util.Collections;
 
 @Configuration
 public class SpringFilterChain {
-    //private final WlascicielService wlascicielService;
-    /*private final PasswordEncoder passwordEncoder;
+    private final WlascicielService wlascicielService;
+    private final PasswordEncoder passwordEncoder;
     private final CustomAuthenticationProvider customAuthenticationProvider;
 
     public SpringFilterChain(WlascicielService wlascicielService, PasswordEncoder passwordEncoder, CustomAuthenticationProvider customAuthenticationProvider) {
         this.wlascicielService = wlascicielService;
         this.passwordEncoder = passwordEncoder;
         this.customAuthenticationProvider = customAuthenticationProvider;
-    }*/
+    }
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
@@ -46,7 +47,6 @@ public class SpringFilterChain {
 
     @Bean
     public AuthenticationManager authenticationManager() {
-        //return new ProviderManager(Collections.singletonList(customAuthenticationProvider));
-        return null;
+        return new ProviderManager(Collections.singletonList(customAuthenticationProvider));
     }
 }

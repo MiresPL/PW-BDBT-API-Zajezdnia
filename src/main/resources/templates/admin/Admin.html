@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel Administracyjny</title>
+    <link rel="stylesheet" th:href="@{/css/admin/admin.css}">
+    <link rel="stylesheet" th:href="@{/css/global/global.css}">
+    <link rel="icon" type="image/png" th:href="@{/images/favicon.svg}">
+</head>
+<body>
+<div class="container">
+    <h1>Panel Administracyjny</h1>
+    <div class="logout">
+        <a th:href="@{/logout}">Wyloguj</a>
+    </div>
+    <table>
+        <thead>
+        <tr>
+            <th>Imię i Nazwisko
+            </th>
+            <th>Działania</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>
+                Nowy Pracownik
+            </td>
+            <td>
+                <a class="edit" th:href="@{../kierowcy/addNew}">Dodaj</a>
+            </td>
+        </tr>
+        <tr th:each="kierowca : ${kierowcy}">
+            <td th:text="${kierowca.imie + ' ' + kierowca.nazwisko}"></td>
+            <td>
+                <a class="edit" th:href="@{../kierowcy/update/{id}(id=${kierowca.idKierowcy})}">Edytuj</a>
+                <a class="remove" th:href="@{../kierowcy/remove/{id}(id=${kierowca.idKierowcy})}">Usuń</a>
+            </td>
+        </tr>
+
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

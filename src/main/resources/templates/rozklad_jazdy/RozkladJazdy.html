@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Linia do Centrum Schedule</title>
+</head>
+<body>
+<h1>Linia do Centrum Schedule</h1>
+
+<table border="1">
+    <thead>
+    <tr>
+        <th>Przystanek</th>
+        <th>Czas Przyjazdu</th>
+        <th>Czas Odjazdu</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="row : ${rozklad}">
+        <td><a th:href="${row[1]}" th:text="${row[0]}"></a></td> <!-- przystanek -->
+        <td th:text="${row[2]}"></td> <!-- czasOdjazdu -->
+        <td th:text="${row[3]}"></td> <!-- czasOdjazdu -->
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

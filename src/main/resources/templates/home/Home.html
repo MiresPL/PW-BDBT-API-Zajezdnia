@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pl">
+<head>
+    <title>Park Rozrywki</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" th:href="@{/css/global/global.css}">
+    <link rel="stylesheet" th:href="@{/css/common/header.css}">
+    <link rel="stylesheet" th:href="@{/css/home/home.css}">
+    <link rel="stylesheet" th:href="@{/css/fonts/font-awesome.min.css}">
+    <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans+Text_old:400&text=%E2%86%90%E2%86%92%E2%86%91%E2%86%93&lang=pl">
+    <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Google+Sans_old:400,500,700|Google+Sans+Text_old:400,500,700&lang=pl">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="icon" type="image/png" th:href="@{/images/favicon.svg}">
+</head>
+<body>
+<div class="main-container-fluid">
+    <div  th:replace="common/Header :: headerFragment">Some Content</div>
+
+    <div class="home-container">
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <img th:src="@{/images/img1.png}" class="" alt="..." >
+            </div>
+            <div class="mySlides fade">
+                <img th:src="@{/images/img2.png}" class="" alt="..." >
+            </div>
+            <div class="mySlides fade">
+                <img th:src="@{/images/img3.png}" class="" alt="..." >
+            </div>
+            <div class="mySlides fade">
+                <img th:src="@{/images/img4.png}" class="" alt="..." >
+            </div>
+            <script>
+                let slideIndex = 0;
+                showSlides();
+
+                function showSlides() {
+                    let i;
+                    let slides = document.getElementsByClassName("mySlides");
+                    for (i = 0; i < slides.length; i++) {
+                        slides[i].style.display = "none";
+                    }
+                    slideIndex++;
+                    if (slideIndex > slides.length) {slideIndex = 1}
+                    slides[slideIndex-1].style.display = "block";
+                    setTimeout(showSlides, 8000);
+                }
+            </script>
+        </div>
+    <div class="text-container">
+        <p>Największy park rozrywki po tej stronie drogi mlecznej!</p>
+        <p>blah blah blah blah</p>
+        <button class="btn">Kup Bilet</button>
+    </div>
+    </div>
+
+
+
+</div>
+</body>
+</html>

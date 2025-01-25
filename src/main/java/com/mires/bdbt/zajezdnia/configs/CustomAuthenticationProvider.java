@@ -1,6 +1,8 @@
 package com.mires.bdbt.zajezdnia.configs;
 
 
+import com.mires.bdbt.zajezdnia.entities.Wlasciciel;
+import com.mires.bdbt.zajezdnia.services.WlascicielService;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -13,15 +15,15 @@ import java.util.Collections;
 
 @Component
 public class CustomAuthenticationProvider implements AuthenticationProvider {
-    //private final WlascicielService wlascicielService;
+    private final WlascicielService wlascicielService;
 
-    /*public CustomAuthenticationProvider(WlascicielService wlascicielService) {
+    public CustomAuthenticationProvider(WlascicielService wlascicielService) {
         this.wlascicielService = wlascicielService;
-    }*/
+    }
 
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
-        /*String login = authentication.getName();
+        String login = authentication.getName();
         String password = authentication.getCredentials().toString();
 
         // Custom login logic
@@ -35,8 +37,7 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
                 wlasciciel.getLogin(),
                 wlasciciel.getHaslo(),
                 Collections.singletonList(new SimpleGrantedAuthority("ROLE_ADMIN"))
-        );*/
-        return null;
+        );
     }
 
     @Override

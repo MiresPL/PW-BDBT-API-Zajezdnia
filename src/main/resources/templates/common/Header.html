@@ -1,0 +1,31 @@
+<!-- Header.html -->
+<header class="header-section" th:fragment="headerFragment">
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom-nav-container">
+            <a class="navbar-brandName" th:if="${session.pasazer != null}" th:text="'Witaj, ' + ${session.pasazer.imie}">. </a>
+            <a class="navbar-brandName" th:if="${session.pasazer == null}">Nazwa Zajezdni</a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-menu">
+                    <li class="navbar-item" th:classappend="${request.requestURI == '/' ? 'active' : ''}">
+                        <a class="nav-link" th:href="@{/}">Strona Główna</a>
+                    </li>
+                    <li class="navbar-item" th:classappend="${request.requestURI.contains('/rozklad_jazdy') ? 'active' : ''}">
+                        <a class="nav-link" th:href="@{../rozklad_jazdy}">Rozkład Jazdy</a>
+                    </li>
+                    <li class="navbar-item" th:classappend="${request.requestURI.contains('/bilety') ? 'active' : ''}">
+                        <a class="nav-link" th:if="${session.pasazer == null }" th:href="@{/pasazer/login}">Bilety</a>
+                        <a class="nav-link" th:if="${session.pasazer != null }" th:href="@{/bilety}">Bilety</a>
+                    </li>
+                </ul>
+                <div class="navbar-user-option-box">
+                    <a th:if="${session.pasazer == null}" th:href="@{/pasazer/login}">
+                        <i class="fa fa-user"></i>
+                    </a>
+                    <a class="navbar-icon" th:if="${session.pasazer != null}" th:href="@{/pasazer/profil}">
+                        <i class="fa fa-user"></i>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
