@@ -1,0 +1,7 @@
+/* src/main/resources/static/css/colors.css */
+:root {
+    --background-color: #ffffff; /* White background */
+    --text-color: #2c2c2c; /* Dark grey text */
+    --accent-color: #b30000; /* Darker red accent */
+    --hover-color: rgb(255, 68, 68); /* Darker red on hover */
+}

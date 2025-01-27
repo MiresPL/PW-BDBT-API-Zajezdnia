@@ -1,316 +1,79 @@
-.header-section .container-fluid {
-    padding-right: 25px;
-    padding-left: 25px;
-}
-
-.container-fluid {
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-}
-
-.navbar-brandName span {
-    font-weight: bold;
-    color: #000000;
-    font-size: 24px;
-    text-transform: uppercase;
-}
-
-.custom-nav-container {
+/* General container setup */
+.header-section .container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    padding: 15px 0;
-}
-
-.custom-nav-container .navbar-menu {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-}
-
-.custom-nav-container .navbar-menu .navbar-item {
-    margin: 0 10px;
-}
-
-
-.custom-nav-container .navbar-menu .navbar-item .nav-link {
-    padding: 5px 25px;
-    color: #000000;
-    text-align: center;
-    text-transform: uppercase;
-    border-radius: 5px;
-    transition: all 0.3s;
-}
-
-.custom-nav-container .navbar-menu .navbar-item:hover .nav-link, .custom-nav-container .navbar-menu .navbar-item.active .nav-link {
-    color: #ffffff;
-    background-color: #8019c8;
-}
-
-.custom-nav-container .nav-search-btn {
-    width: 35px;
-    height: 35px;
-    padding: 0;
-    border: none;
-    color: #000000;
-}
-
-.custom-nav-container .nav-search-btn:hover {
-    color: #000000;
-}
-
-.custom-nav-container .navbar-toggler {
-    outline: none;
-}
-
-.custom-nav-container .navbar-toggler {
-    padding: 0;
-    width: 37px;
-    height: 42px;
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
-}
-
-.custom-nav-container .navbar-toggler span {
-    display: block;
-    width: 35px;
-    height: 4px;
-    background-color: #000000;
-    margin: 7px 0;
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
-    position: relative;
-    border-radius: 5px;
-}
-
-.custom-nav-container .navbar-toggler span::before, .custom-nav-container .navbar-toggler span::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    height: 100%;
     width: 100%;
-    background-color: #000000;
-    top: -10px;
-    border-radius: 5px;
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
-}
-
-.custom-nav-container .navbar-toggler span::after {
-    top: 10px;
-}
-
-.custom-nav-container .navbar-toggler[aria-expanded="true"] {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-}
-
-.custom-nav-container .navbar-toggler[aria-expanded="true"] span {
-    -webkit-transform: rotate(45deg);
-    transform: rotate(45deg);
-}
-
-.custom-nav-container .navbar-toggler[aria-expanded="true"] span::before, .custom-nav-container .navbar-toggler[aria-expanded="true"] span::after {
-    -webkit-transform: rotate(90deg);
-    transform: rotate(90deg);
-    top: 0;
-}
-
-.custom-nav-container .navbar-toggler[aria-expanded="true"] .s-1 {
-    -webkit-transform: rotate(45deg);
-    transform: rotate(45deg);
-    margin: 0;
-    margin-bottom: -4px;
-}
-
-.custom-nav-container .navbar-toggler[aria-expanded="true"] .s-2 {
-    display: none;
-}
-
-.custom-nav-container .navbar-toggler[aria-expanded="true"] .s-3 {
-    -webkit-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-    margin: 0;
-    margin-top: -4px;
-}
-
-.custom-nav-container .navbar-toggler[aria-expanded="false"] .s-1,
-.custom-nav-container .navbar-toggler[aria-expanded="false"] .s-2,
-.custom-nav-container .navbar-toggler[aria-expanded="false"] .s-3 {
-    -webkit-transform: none;
-    transform: none;
-}
-
-.navbar-user-option-box {
-    width: 120px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-}
-
-.navbar-user-option-box a {
-    margin-left: 15px;
-    color: #8019c8;
+    padding: 0 15px;
 }
 
 .navbar {
-    position: relative;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -ms-flex-align: center;
-    align-items: center;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    padding: 0.5rem 1rem;
-}
-
-.navbar > .container,
-.navbar > .container-fluid {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -ms-flex-align: center;
-    align-items: center;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-}
-
-.navbar-brandName {
-    display: inline-block;
-    padding-top: 0.3125rem;
-    padding-bottom: 0.3125rem;
-    margin-right: 1rem;
-    font-size: 1.25rem;
-    line-height: inherit;
-    white-space: nowrap;
-}
-
-.navbar-brandName:hover, .navbar-brandName:focus {
-    text-decoration: none;
-}
-
-.navbar-menu {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    padding-left: 0;
-    margin-bottom: 0;
-    list-style: none;
-}
-
-.navbar-menu .nav-link {
-    padding-right: 0;
-    padding-left: 0;
-}
-.nav-link{
-    width: 180px;
-}
-.navbar-menu .dropdown-menu {
-    position: static;
-    float: none;
-}
-
-.navbar-text {
-    display: inline-block;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-}
-
-.navbar-collapse {
-    -ms-flex-preferred-size: 100%;
-    flex-basis: 100%;
-    -ms-flex-positive: 1;
-    flex-grow: 1;
-    -ms-flex-align: center;
+    width: 100%;
     align-items: center;
 }
 
-.navbar-toggler {
-    padding: 0.25rem 0.75rem;
-    font-size: 1.25rem;
-    line-height: 1;
-    background-color: transparent;
-    border: 1px solid transparent;
-    border-radius: 0.25rem;
+/* Each section takes 33% of the header */
+.navbar .navbar-left, .navbar .navbar-center, .navbar .navbar-right {
+    flex: 1;
+    display: flex;
+    align-items: center;
 }
 
-.navbar-toggler:hover, .navbar-toggler:focus {
-    text-decoration: none;
-}
-
-.navbar-toggler-icon {
-    display: inline-block;
-    width: 1.5em;
-    height: 1.5em;
-    vertical-align: middle;
-    content: "";
-    background: no-repeat center center;
-    background-size: 100% 100%;
-}
-
-.navbar-expand {
-    -ms-flex-flow: row nowrap;
-    flex-flow: row nowrap;
-    -ms-flex-pack: start;
+/* Left section: Brand */
+.navbar .navbar-left {
     justify-content: flex-start;
 }
 
-.navbar-expand > .container,
-.navbar-expand > .container-fluid {
-    padding-right: 0;
-    padding-left: 0;
+.navbar .navbar-left .brand {
+    font-weight: bold;
+    font-size: 24px;
+    text-transform: uppercase;
+    color: var(--text-color);
+    font-family: 'Inconsolata', monospace;
 }
 
-.navbar-expand .navbar-menu {
-    -ms-flex-direction: row;
-    flex-direction: row;
+/* Center section: Menu items */
+.navbar .navbar-center {
+    justify-content: center;
 }
 
-.navbar-expand .navbar-menu .dropdown-menu {
-    position: absolute;
+.navbar .navbar-center .menu {
+    display: flex; /* Ensures items are aligned horizontally */
+    gap: 20px; /* Adds space between items */
+    padding: 0;
+    margin: 0;
+    list-style: none;
 }
 
-.navbar-expand .navbar-menu .nav-link {
-    padding-right: 0.5rem;
-    padding-left: 0.5rem;
+.navbar .navbar-center .menu li {
+    list-style: none;
 }
 
-.navbar-expand > .container,
-.navbar-expand > .container-fluid {
-    -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap;
+.navbar .navbar-center .menu li a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 10px 15px;
+    display: inline-block;
+    font-family: 'Roboto', sans-serif;
 }
 
-.navbar-expand .navbar-collapse {
-    display: -ms-flexbox !important;
-    display: flex !important;
-    -ms-flex-preferred-size: auto;
-    flex-basis: auto;
+/* Optional: Highlight for active links */
+.navbar .navbar-center .menu li.active a {
+    color: var(--accent-color);
+    border-bottom: 2px solid var(--accent-color);
 }
 
-.navbar-expand .navbar-toggler {
-    display: none;
+/* Right section: Profile icon */
+.navbar .navbar-right {
+    justify-content: flex-end;
 }
 
-.navbar-menu {
-    flex-direction: row;
-}
-
-.navbar-expand-lg .navbar-collapse {
-    display: flex !important;
-    flex-basis: auto;
-}
-.custom-nav-container .navbar-icon {
-    margin-left: 20px;
-}
-.custom-nav-container .navbar-icon a:hover {
-    color: #8019c8;
+.navbar .navbar-right .user-options a {
+    color: var(--text-color);
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
 }

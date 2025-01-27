@@ -10,11 +10,13 @@
     <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Google+Sans_old:400,500,700|Google+Sans+Text_old:400,500,700&lang=pl">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" th:href="@{/images/favicon.svg}">
     <meta charset="UTF-8">
     <title>Kup Bilet</title>
 </head>
 <body>
+<div class="container">
 <div th:replace="common/Header :: headerFragment">Some Content</div>
 
 <form action="#" th:action="@{/pasazer/buyTicket}" method="post" th:object="${bilet}">
@@ -27,5 +29,6 @@
     <input type="date" id="dataWaznosci" name="dataWaznosci" th:field="*{dataWaznosci}"><br>
     <input type="submit" value="Kup">
 </form>
+</div>
 </body>
 </html>

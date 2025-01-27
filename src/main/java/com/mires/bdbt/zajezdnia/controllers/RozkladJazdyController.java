@@ -1,6 +1,5 @@
 package com.mires.bdbt.zajezdnia.controllers;
 
-
 import com.mires.bdbt.zajezdnia.services.LiniaService;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
@@ -22,5 +21,17 @@ public class RozkladJazdyController {
         model.addAttribute("rozklad", liniaService.getRozkladJazdy());
         model.addAttribute("request", request);
         return "rozklad_jazdy/RozkladJazdy";
+    }
+
+    @GetMapping("/")
+    public String listRozkladJazdy2(final Model model, HttpServletRequest request) {
+        model.addAttribute("rozklad", liniaService.getRozkladJazdy());
+        model.addAttribute("request", request);
+        return "rozklad_jazdy/RozkladJazdy";
+    }
+
+    @GetMapping("/placeholder")
+    public String placeholderPage(final Model model, HttpServletRequest request) {
+        return "rozklad_jazdy/RozkladyJazdy";
     }
 }

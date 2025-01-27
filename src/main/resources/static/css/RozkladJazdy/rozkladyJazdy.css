@@ -1,0 +1,77 @@
+/* src/main/resources/static/css/rozklad_jazdy/rozkladyJazdy.css */
+
+body {
+    font-family: 'Inconsolata', monospace;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+h1 {
+    text-align: center;
+    color: var(--accent-color);
+    margin-top: 10vh; !important;
+}
+
+table {
+    width: 40%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--text-color);
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid var(--text-color);
+}
+
+th {
+    background-color: var(--accent-color);
+    color: var(--background-color);
+}
+
+td:last-child {
+    width: 40%;
+    text-align: center;
+}
+
+tr:hover {
+    background-color: var(--hover-color);
+    color: white;
+}
+
+button {
+    background-color: var(--accent-color);
+    color: var(--background-color);
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 5px 3px;
+    cursor: pointer;
+    border-radius: 4px;
+    box-sizing: border-box; /* Include border in size calculation */
+}
+
+button:hover {
+    background-color: var(--accent-color);
+    border: 1px solid var(--text-color);
+    margin: 4px 2px; /* Keep the margin consistent */
+    box-sizing: border-box; /* Include border in size calculation */
+}
+
+a {
+    color: var(--text-color);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:hover {
+    color: var(--background-color);
+    text-decoration: none;
+    cursor: pointer;
+}
