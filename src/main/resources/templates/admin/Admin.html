@@ -43,6 +43,36 @@
 
         </tbody>
     </table>
+    <br> <br>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Typ Pojazdu - Nr Rejestracyjny - Pojemność - Ostatni Przegląd - Status
+            </th>
+            <th>Działania</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>
+                Nowy Pojazd
+            </td>
+            <td>
+                <a class="edit" th:href="@{../pojazdy/addNew}">Dodaj</a>
+            </td>
+        </tr>
+        <tr th:each="pojazd : ${pojazdy}">
+            <td th:text="${pojazd.typPojazdu + ' - ' + pojazd.numerRejestracyjny + ' - ' + pojazd.pojemnosc + ' - ' + pojazd.ostatniPrzeglad + ' - ' + pojazd.status}"></td>
+            <td>
+                <a class="edit" th:href="@{../pojazdy/update/{id}(id=${pojazd.idPojazdu})}">Edytuj</a>
+                <a class="remove" th:href="@{../pojazdy/remove/{id}(id=${pojazd.idPojazdu})}">Usuń</a>
+            </td>
+        </tr>
+
+        </tbody>
+    </table>
+
 </div>
 </body>
 </html>

@@ -15,8 +15,8 @@
                     <li th:classappend="${request.requestURI == '/' ? 'active' : ''}">
                         <a th:href="@{/}">Strona Główna</a>
                     </li>
-                    <li th:classappend="${request.requestURI.contains('/rozklad_jazdy') ? 'active' : ''}">
-                        <a th:href="@{/rozklad_jazdy}">Rozkład Jazdy</a>
+                    <li th:classappend="${request.requestURI.contains('/linie') ? 'active' : ''}">
+                        <a th:href="@{/linie}">Rozkład Jazdy</a>
                     </li>
                     <li th:classappend="${request.requestURI.contains('/bilety') ? 'active' : ''}">
                         <a th:if="${session.pasazer == null}" th:href="@{/pasazer/login}">Bilety</a>

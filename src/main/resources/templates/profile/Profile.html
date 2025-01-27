@@ -48,10 +48,11 @@
                 <h2>Twoje Bilety</h2>
                 <ul>
                     <li th:each="ticket : ${tickets}">
-                        <p th:text="'ID Biletu: ' + ${ticket.idBiletu}"></p>
                         <p th:text="'Data Zakupu: ' + ${ticket.dataZakupu}"></p>
-                        <p th:text="'Data Ważnosci: ' + ${ticket.dataWaznosci}"></p>
+                        <p th:text="'Ważność Biletu: ' + ${ticket.dlugoscTrwaniaBiletu}"></p>
                         <p th:text="'Typ Biletu: ' + ${ticket.typuBiletu}"></p>
+                        <p th:if="${ticket.dataSkasowania == null}" th:text="'Data Skasowania: Nie skasowano!'"></p>
+                        <p th:if="${ticket.dataSkasowania != null}" th:text="'Data Skasowania: ' + ${ticket.dataSkasowania}"></p>
                     </li>
                 </ul>
         </div>

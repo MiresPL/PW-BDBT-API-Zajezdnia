@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" th:href="@{/css/login/login.css}">
-    <link rel="stylesheet" th:href="@{/css/global/global.css}">
+    <title>Rozkład Jazdy Linii</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" th:href="@{/images/favicon.svg}">
+    <link rel="stylesheet" th:href="@{/css/RozkladJazdy/rozkladyJazdy.css}">
     <link rel="stylesheet" th:href="@{/css/common/colors.css}">
     <link rel="stylesheet" th:href="@{/css/common/header.css}">
     <link rel="stylesheet" th:href="@{/css/fonts/font-awesome.min.css}">
@@ -13,29 +13,26 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
-
     <link rel="icon" type="image/png" th:href="@{/images/favicon.svg}">
 </head>
 <body>
-
 <div th:replace="common/Header :: headerFragment">Some Content</div>
 
-<div class="container">
-Zaloguj się
-<form action="#" th:action="@{/pasazer/loginRequest}" th:object="${loginCredentials}" method="post">
-    <div th:if="${param.error}">
-        Niepoprawne dane logowania
-    </div>
-    <div>
-        <label for="login">Nazwa użytkownika:</label><br>
-        <input type="text" id="login" th:field="*{login}"><br>
-    </div>
-    <div>
-        <label for="haslo">Hasło:</label><br>
-        <input type="password" id="haslo" th:field="*{password}"><br><br>
-    </div>
-    <input type="submit" value="Zaloguj">
-</form>
-</div>
+<h1>Linia do Centrum Schedule</h1>
+
+<table border="1">
+    <thead>
+    <tr>
+        <th>Nr. Linii</th>
+        <th>Opis Lini</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="linia : ${linie}">
+        <td><a th:text="${linia.nazwa}" th:href="@{/linie/list/{id}(id=${linia.idLinii})}"></a></td> <!-- przystanek -->
+        <td><p th:text="${linia.opisLinii}"></p></td> <!-- przystanek -->
+    </tr>
+    </tbody>
+</table>
 </body>
 </html>

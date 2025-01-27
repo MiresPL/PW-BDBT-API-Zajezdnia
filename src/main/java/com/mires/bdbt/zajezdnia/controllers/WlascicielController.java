@@ -3,6 +3,7 @@ package com.mires.bdbt.zajezdnia.controllers;
 
 import com.mires.bdbt.zajezdnia.entities.Wlasciciel;
 import com.mires.bdbt.zajezdnia.services.KierowcyService;
+import com.mires.bdbt.zajezdnia.services.PojazdyService;
 import com.mires.bdbt.zajezdnia.services.WlascicielService;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -16,11 +17,13 @@ import org.springframework.web.bind.annotation.*;
 @SessionAttributes("admin")
 public class WlascicielController {
     private final WlascicielService wlascicielService;
-    private KierowcyService kierowcyService;
+    private final PojazdyService pojazdyService;
+    private final KierowcyService kierowcyService;
 
-    public WlascicielController(WlascicielService wlascicielService, KierowcyService kierowcyService) {
+    public WlascicielController(WlascicielService wlascicielService, KierowcyService kierowcyService, PojazdyService pojazdyService) {
         this.wlascicielService = wlascicielService;
         this.kierowcyService = kierowcyService;
+        this.pojazdyService = pojazdyService;
     }
 
     @GetMapping
@@ -30,6 +33,7 @@ public class WlascicielController {
         Wlasciciel wlasciciel = wlascicielService.findByLogin(username);
         model.addAttribute("admin", wlasciciel);
         model.addAttribute("kierowcy", kierowcyService.getAllKierowcy());
+        model.addAttribute("pojazdy", pojazdyService.findAll());
 
         return "admin/Admin";
     }

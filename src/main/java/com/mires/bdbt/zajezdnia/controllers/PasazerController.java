@@ -42,6 +42,7 @@ public class PasazerController {
 
     @GetMapping("/login")
     public String login(final Model model, HttpServletRequest request) {
+        //throw HttpServerErrorException.create(HttpStatus.INTERNAL_SERVER_ERROR, "Niepoprawne dane logowania", HttpHeaders.EMPTY, "Niepoprawne dane logowania".getBytes(Charset.defaultCharset()), Charset.defaultCharset());
         model.addAttribute("loginCredentials", new LoginCredentials());
         model.addAttribute("request", request);
         return "login/Login";
@@ -76,6 +77,7 @@ public class PasazerController {
         bilet.setIdBiletu(biletyService.getNextId());
         bilet.setIdPasazera(pasazer.getIdPasazera());
         bilet.setDataZakupu(new Date(System.currentTimeMillis()));
+        bilet.setDataSkasowania(null);
         biletyService.save(bilet);
         return "redirect:/pasazer/profil";
     }

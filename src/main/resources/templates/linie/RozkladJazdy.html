@@ -1,41 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" th:href="@{/css/login/login.css}">
-    <link rel="stylesheet" th:href="@{/css/global/global.css}">
+    <title>Rozkład Jazdy Linii</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" th:href="@{/images/favicon.svg}">
+    <link rel="stylesheet" th:href="@{/css/RozkladJazdy/rozkladyJazdy.css}">
     <link rel="stylesheet" th:href="@{/css/common/colors.css}">
     <link rel="stylesheet" th:href="@{/css/common/header.css}">
-    <link rel="stylesheet" th:href="@{/css/fonts/font-awesome.min.css}">
     <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans+Text_old:400&text=%E2%86%90%E2%86%92%E2%86%91%E2%86%93&lang=pl">
     <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Google+Sans_old:400,500,700|Google+Sans+Text_old:400,500,700&lang=pl">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
-
     <link rel="icon" type="image/png" th:href="@{/images/favicon.svg}">
 </head>
 <body>
-
 <div th:replace="common/Header :: headerFragment">Some Content</div>
 
-<div class="container">
-Zaloguj się
-<form action="#" th:action="@{/pasazer/loginRequest}" th:object="${loginCredentials}" method="post">
-    <div th:if="${param.error}">
-        Niepoprawne dane logowania
-    </div>
-    <div>
-        <label for="login">Nazwa użytkownika:</label><br>
-        <input type="text" id="login" th:field="*{login}"><br>
-    </div>
-    <div>
-        <label for="haslo">Hasło:</label><br>
-        <input type="password" id="haslo" th:field="*{password}"><br><br>
-    </div>
-    <input type="submit" value="Zaloguj">
-</form>
-</div>
+<h1>Linia do Centrum Schedule</h1>
+
+<table border="1">
+    <thead>
+    <tr>
+        <th>Nr w Kolejności</th>
+        <th>Nazwa Przystanku</th>
+        <th>Godziny Odjazdu</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="entity : ${rozkladJazdy}">
+        <td th:text="${entity.liniaPrzystanki.kolejnoscNaTrasie}"></td> <!-- przystanek -->
+        <td th:text="${entity.przystanek.nazwa}"></td> <!-- czasOdjazdu -->
+        <td th:each="godzina : ${entity.godzinyOdjazdu}">
+            <p th:text="${godzina}"></p>
+        </td> <!-- czasOdjazdu -->
+    </tr>
+    </tbody>
+</table>
 </body>
 </html>

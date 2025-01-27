@@ -25,8 +25,14 @@
         <option  th:value="normalny" >Normalny</option>
         <option  th:value="ulgowy" >Ulgowy</option>
     </select><br>
-    <label for="dataWaznosci">Data ważności:</label><br>
-    <input type="date" id="dataWaznosci" name="dataWaznosci" th:field="*{dataWaznosci}"><br>
+    <label for="dlugosc">Czas Trwania Biletu:</label><br>
+    <select id="dlugosc" name="dlugoscTrwania" th:field="*{dlugoscTrwaniaBiletu}">
+        <option  th:value="'90 dni'" >90 Dni</option>
+        <option  th:value="'60 dni'" >60 Dni</option>
+        <option  th:value="'30 dni'" >30 Dni</option>
+        <option  th:value="'7 dni'" >7 Dni</option>
+        <option  th:value="'1 dzień'" >1 Dzień</option>
+    </select><br>
     <input type="submit" value="Kup">
 </form>
 </div>
