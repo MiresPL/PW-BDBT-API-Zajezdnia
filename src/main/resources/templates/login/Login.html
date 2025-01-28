@@ -20,8 +20,8 @@
 
 <div th:replace="common/Header :: headerFragment">Some Content</div>
 
-<div class="container">
-Zaloguj się
+<div class="login-container">
+<h2>Zaloguj się</h2>
 <form action="#" th:action="@{/pasazer/loginRequest}" th:object="${loginCredentials}" method="post">
     <div th:if="${param.error}">
         Niepoprawne dane logowania

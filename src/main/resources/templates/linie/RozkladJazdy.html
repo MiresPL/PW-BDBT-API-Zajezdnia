@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Rozkład Jazdy Linii</title>
+    <title th:text="'Rozkład jazdy linii ' + ${linia.nazwa}">Rozkład Jazdy Linii</title>
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" th:href="@{/images/favicon.svg}">
     <link rel="stylesheet" th:href="@{/css/RozkladJazdy/rozkladyJazdy.css}">
@@ -17,14 +17,14 @@
 <body>
 <div th:replace="common/Header :: headerFragment">Some Content</div>
 
-<h1>Linia do Centrum Schedule</h1>
+<h1 th:text="'Rozkład jazdy linii ' + ${linia.nazwa}"></h1>
 
 <table border="1">
     <thead>
     <tr>
         <th>Nr w Kolejności</th>
         <th>Nazwa Przystanku</th>
-        <th>Godziny Odjazdu</th>
+        <th colspan="10">Godziny Odjazdu</th>
     </tr>
     </thead>
     <tbody>

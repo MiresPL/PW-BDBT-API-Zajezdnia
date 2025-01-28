@@ -50,6 +50,7 @@ public class LinieController {
                 .thenComparingLong(r -> r.getLiniaPrzystanki().getKolejnoscNaTrasie()));
         model.addAttribute("rozkladJazdy", rozkladJazdy);
         model.addAttribute("request", request);
+        model.addAttribute("linia", linia);
         return "linie/RozkladJazdy";
     }
 

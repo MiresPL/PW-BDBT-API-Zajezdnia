@@ -14,6 +14,6 @@ public interface BiletyRepository extends JpaRepository<Bilet, Long> {
     @Query("SELECT b FROM Bilet b")
     List<Bilet> findAll();
 
-    @Query("SELECT b FROM Bilet b WHERE b.idPasazera = :idPasazera")
+    @Query("SELECT b FROM Bilet b WHERE b.idPasazera = :idPasazera ORDER BY b.dataZakupu DESC")
     List<Bilet> findBiletyByIdPasazera(@Param("idPasazera") Long idPasazera);
 }

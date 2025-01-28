@@ -1,3 +1,73 @@
-.container{
+/* src/main/resources/static/css/tickets/tickets.css */
+
+/* General container setup */
+.container {
     padding: 20px;
 }
+
+.tickets-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 40px;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.tickets-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+.tickets-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.tickets-container label {
+    margin-bottom: 5px;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.tickets-container select,
+.tickets-container input[type="submit"] {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.tickets-container input[type="submit"] {
+    background-color: var(--accent-color);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.tickets-container input[type="submit"]:hover {
+    background-color: var(--hover-color);
+}
+
+/* Style the select element */
+select {
+    background-color: #fff;
+    color: #000;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+/* Style the selected option */
+select option:checked {
+    background-color: var(--accent-color);
+    color: #fff;
+}
+

@@ -16,9 +16,11 @@
     <title>Kup Bilet</title>
 </head>
 <body>
-<div class="container">
 <div th:replace="common/Header :: headerFragment">Some Content</div>
+<div class="container">
 
+
+    <div class="tickets-container">
 <form action="#" th:action="@{/pasazer/buyTicket}" method="post" th:object="${bilet}">
     <label for="rodzajBiletu">Rodzaj biletu:</label><br>
     <select id="rodzajBiletu" name="nrBiletu" th:field="*{typuBiletu}">
@@ -35,6 +37,7 @@
     </select><br>
     <input type="submit" value="Kup">
 </form>
+    </div>
 </div>
 </body>
 </html>

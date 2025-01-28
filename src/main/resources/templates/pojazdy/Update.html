@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edytuj Pojazd</title>
+    <link rel="stylesheet" th:href="@{/css/admin/admin.css}">
+    <link rel="icon" type="image/png" th:href="@{/images/favicon.svg}">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+<div id="editPracownikModal" class="modal">
+    <div class="modal-content">
+        <a class="close" th:href="@{../../admin}">&times;</a>
+        <h2>Edytuj Informacje o Pojeździe</h2>
+        <form id="editPracownikForm" th:action="@{/pojazdy/add}" method="post">
+            <input type="hidden" id="kierowcaId" th:field="*{pojazd.idPojazdu}">
+
+            <label for="imie">Numer Rejestracyjny:</label>
+            <input type="text" id="imie" th:field="*{pojazd.numerRejestracyjny}"><br>
+
+            <label for="nazwisko">Pojemność:</label>
+            <input type="text" id="nazwisko" th:field="*{pojazd.pojemnosc}"><br>
+
+            <label for="pesel">Typ Pojazdu:</label>
+            <input type="text" id="pesel" th:field="*{pojazd.typPojazdu}" maxlength="11"><br>
+
+            <label for="statusPojazdu">Status Pojazdu:</label>
+            <select id="statusPojazdu" name="status" th:field="*{pojazd.status}">
+                <option value="W użyciu">W użyciu</option>
+                <option value="W naprawie">W naprawie</option>
+            </select><br>
+
+            <label for="nrTelefonu">Data ostatniego przeglądu:</label>
+            <input type="date" id="nrTelefonu" th:field="*{pojazd.ostatniPrzeglad}"><br>
+
+            <label for="email">ID Zajezdni:</label>
+            <input type="text" id="email" th:field="*{pojazd.idZajezdni}"><br>
+
+            <input type="submit" value="Update"><br>
+
+        </form>
+    </div>
+</div>
+</body>
+</html>

@@ -6,6 +6,7 @@
     <link rel="stylesheet" th:href="@{/css/login/login.css}">
     <link rel="stylesheet" th:href="@{/css/global/global.css}">
     <link rel="stylesheet" th:href="@{/css/common/header.css}">
+    <link rel="stylesheet" th:href="@{/css/common/colors.css}">
     <link rel="stylesheet" th:href="@{/css/fonts/font-awesome.min.css}">
     <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans+Text_old:400&text=%E2%86%90%E2%86%92%E2%86%91%E2%86%93&lang=pl">
     <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Google+Sans_old:400,500,700|Google+Sans+Text_old:400,500,700&lang=pl">
@@ -15,8 +16,8 @@
     <link rel="icon" type="image/png" th:href="@{/images/favicon.svg}">
 </head>
 <body>
-<div class="container">
-    Zaloguj się
+<div class="login-container">
+    <h2>Zaloguj się</h2>
     <form action="#" th:action="@{/admin/loginRequest}" method="post">
         <div th:if="${error}">
             <p style="color: red;">Niepoprawne dane logowania</p>

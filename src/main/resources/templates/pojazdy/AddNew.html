@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dodaj Pojazd</title>
+    <link rel="stylesheet" th:href="@{/css/admin/admin.css}">
+    <link rel="stylesheet" th:href="@{/css/common/colors.css}">
+    <link rel="icon" type="image/png" th:href="@{/images/favicon.svg}">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+<div id="editPracownikModal" class="modal">
+    <div class="modal-content">
+        <a class="close" th:href="@{../../admin}">&times;</a>
+        <h2>Dodaj Pojazd</h2>
+        <form id="editPracownikForm" th:action="@{/pojazdy/add}" method="post">
+            <input type="hidden" id="kierowcaId" th:field="*{pojazd.idPojazdu}">
+
+            <label for="imie">Numer Rejestracyjny</label>
+            <input type="text" id="imie" th:field="*{pojazd.numerRejestracyjny}"><br>
+
+            <label for="nazwisko">Pojemnosc</label>
+            <input type="number" id="nazwisko" th:field="*{pojazd.pojemnosc}"><br>
+
+            <label for="pesel">Typ Pojazdu</label>
+            <input type="text" id="pesel" value="Autobus" readonly><br>
+            <input type="hidden" value="Autobus" th:field="*{pojazd.typPojazdu}">
+
+            <label for="nrTelefonu">Status Pojazdu:</label>
+            <select id="nrTelefonu" name="status" th:field="*{pojazd.status}">
+                <option value="W użyciu">W użyciu</option>
+                <option value="W naprawie">W naprawie</option>
+            </select><br>
+
+            <label for="email">Data ostatniego przeglądu:</label>
+            <input type="date" id="email" th:field="*{pojazd.ostatniPrzeglad}"><br>
+
+            <label for="nrKonta">Numer Zajezdni:</label>
+            <input type="number" id="nrKonta" th:field="*{pojazd.idZajezdni}" maxlength="1"><br>
+            <br>
+
+            <input type="submit" value="Dodaj"><br>
+        </form>
+
+
+    </div>
+</div>
+</body>
+</html>

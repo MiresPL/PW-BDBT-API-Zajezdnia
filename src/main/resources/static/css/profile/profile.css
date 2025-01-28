@@ -1,3 +1,8 @@
+
+.navbar{
+    padding: 20px;
+}
+
 .profile-container {
     width: 80%;
     margin: auto;
@@ -33,7 +38,7 @@ form input[type="date"] {
 form input[type="submit"] {
     margin-top: 20px;
     padding: 10px;
-    background-color: #6f42c1;
+    background-color: var(--accent-color);
     color: white;
     border: none;
     border-radius: 4px;
@@ -41,15 +46,11 @@ form input[type="submit"] {
 }
 
 form input[type="submit"]:hover {
-    background-color: #5b33a1;
+    background-color: var(--hover-color);
 }
 
-header{
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
-    margin-bottom: 2%;
-}
 
-.logout a{
+.logout a {
     position: absolute;
     top: calc(4% + 50px);
     right: 5%;
@@ -61,8 +62,33 @@ header{
     text-decoration: none;
     border-radius: 5px;
 }
-.logout a:hover{
+
+.logout a:hover {
     background-color: #c70000;
     color: white;
     text-decoration: none;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+td {
+    background-color: #f9f9f9;
 }

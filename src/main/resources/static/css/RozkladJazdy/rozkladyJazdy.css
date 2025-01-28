@@ -4,6 +4,7 @@ body {
     font-family: 'Inconsolata', monospace;
     background-color: var(--background-color);
     color: var(--text-color);
+    margin: 20px;
 }
 
 h1 {
@@ -41,6 +42,15 @@ tr:hover {
     background-color: var(--hover-color);
     color: white;
 }
+
+td:first-child:hover{
+    cursor: pointer;
+}
+
+td:first-child:hover a {
+    color: var(--background-color);
+}
+
 
 button {
     background-color: var(--accent-color);

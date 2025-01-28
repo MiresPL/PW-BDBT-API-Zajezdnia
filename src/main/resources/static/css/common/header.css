@@ -4,7 +4,6 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 0 15px;
 }
 
 .navbar {
@@ -50,6 +49,8 @@
     list-style: none;
 }
 
+
+
 .navbar .navbar-center .menu li a {
     text-decoration: none;
     color: var(--text-color);
@@ -58,6 +59,10 @@
     padding: 10px 15px;
     display: inline-block;
     font-family: 'Roboto', sans-serif;
+}
+
+.navbar .navbar-center .menu li a:hover {
+    color: var(--accent-color);
 }
 
 /* Optional: Highlight for active links */
@@ -69,6 +74,7 @@
 /* Right section: Profile icon */
 .navbar .navbar-right {
     justify-content: flex-end;
+    padding-right: 15px;
 }
 
 .navbar .navbar-right .user-options a {
